@@ -3,8 +3,14 @@ const input = document.querySelector("input");
 const button = document.querySelector("button");
 const body = document.querySelector("body");
 
+// ! Declared allNews in global scope to get the index of the clicked news in to save in ls
 let allNews = [];
+
+//? getting input value saved on search from localStorage
+
 const inputVal = localStorage.getItem("inputVal");
+
+//? Func which run when the page loads and search the input value which i got from local storage
 
 async function loadData(searchTerm = inputVal) {
   try {
@@ -39,20 +45,23 @@ async function loadData(searchTerm = inputVal) {
   }
 }
 
+// ?calling the block of code when page reload
+
 window.addEventListener("load", () => {
   loadData();
 });
 
+// ? saving and loading the data according to the query user entered
+
 button.addEventListener("click", async (e) => {
   e.preventDefault();
   const searchTerm = input.value;
-  if (searchTerm) {
-    loadData(searchTerm);
-    localStorage.setItem("inputVal", searchTerm);
-
-    input.value = "";
-  }
+  loadData(searchTerm);
+  localStorage.setItem("inputVal", searchTerm);
+  input.value = "";
 });
+
+// ? saving the whole news by index of that object to get it in new window to read full news
 
 function saveData(index) {
   const dataToSave = allNews[index];
