@@ -15,13 +15,3 @@ resultDiv.innerHTML = `
 </div>
 <a href="./index.html" class=" mt-3 btn btn-primary">Go To Home</a>
 </div>`;
-
-// resultDiv.innerHTML = `<div class="card m-8" style="width: 30rem ;">
-// <img src="${data.urlToImage}" class="card-img-top" alt="...">
-// <div class="card-body">
-//   <h5 class="card-title">${data.title}</h5>
-//   <p class="card-text"></p>
-//   <a href="./index.html" class="btn btn-primary">Go To Home</a>
-//   <h6 class="card-title">Author : ${data.author}</h6>
-// </div>
-// </div>`;
